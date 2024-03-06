@@ -1,0 +1,57 @@
+import './App.css';
+
+type CurrencyType = 'NGN' | 'USD';
+
+interface PayloadType {
+  code: '00' | '09' | '03' | '02';
+  message: string;
+  payload: object;
+}
+
+interface ConfigOptionsTypes {
+  environment: 'sandbox' | 'live';
+  secretKey: string;
+  amount: number;
+  email: string;
+  name: string;
+  currency: CurrencyType;
+  transactionRef: string;
+  mobileNumber?: string;
+  onSuccess?: (payload: PayloadType) => void;
+  onFailure?: (payload: PayloadType) => void;
+  onPending?: (payload: PayloadType) => void;
+}
+const App = () => {
+      const configOptions: ConfigOptionsTypes = {
+        environment: 'sandbox',
+        secretKey: 'sk_test_DXF5KFAJNWYKWLIFBN0OGVQQW2XF',
+        amount: 200,
+        email: 'martins@payonus.com',
+        name: 'SuperMall',
+        currency: 'NGN',
+        mobileNumber: '09077777777',
+        transactionRef: 'boiuafsd8o3bcqgef',
+        onSuccess: payload => console.log(payload),
+        onFailure: payload => console.log(payload),
+        onPending: payload => console.log(payload)
+      };
+      // Function to handle button click
+      const handleButtonClick = () => {
+        if (window.PayonusGateway) {
+          const { openPopup, exitPopup } = window.PayonusGateway.create(configOptions);
+        openPopup();
+        }
+
+      };
+
+  
+  return (
+    <>
+      <h3>Hello, this is the payonus Payment gateway</h3>
+      {/* <button onClick={handlePayment}>Pay Now</button> */}
+      <button onClick={handleButtonClick}>Open Payment Popup</button>
+    </>
+  );
+};
+
+export default App;
