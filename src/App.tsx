@@ -21,6 +21,7 @@ interface ConfigOptionsTypes {
   onFailure?: (payload: PayloadType) => void;
   onPending?: (payload: PayloadType) => void;
 }
+
 const App = () => {
       const configOptions: ConfigOptionsTypes = {
         environment: 'sandbox',
@@ -37,7 +38,9 @@ const App = () => {
       };
       // Function to handle button click
       const handleButtonClick = () => {
+        // @ts-ignore
         if (window.PayonusGateway) {
+          // @ts-ignore
           const { openPopup, exitPopup } = window.PayonusGateway.create(configOptions);
         openPopup();
         }
@@ -47,8 +50,8 @@ const App = () => {
   
   return (
     <>
-      <h3>Hello, this is the payonus Payment gateway</h3>
-      <button onClick={handleButtonClick}>Open Payment Popup</button>
+      <h3>Hello, click the button below to make payment</h3>
+      <button onClick={handleButtonClick}>Pay</button>
     </>
   );
 };
