@@ -48,7 +48,6 @@ const App = () => {
   return (
     <>
       <h3>Hello, this is the payonus Payment gateway</h3>
-      {/* <button onClick={handlePayment}>Pay Now</button> */}
       <button onClick={handleButtonClick}>Open Payment Popup</button>
     </>
   );
