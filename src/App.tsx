@@ -1,5 +1,5 @@
 import './App.css';
-
+import { v4 as uuidv4 } from 'uuid';
 type CurrencyType = 'NGN' | 'USD';
 
 interface PayloadType {
@@ -23,6 +23,7 @@ interface ConfigOptionsTypes {
 }
 
 const App = () => {
+  const transRef = uuidv4();
       const configOptions: ConfigOptionsTypes = {
         environment: 'sandbox',
         secretKey: 'sk_test_DXF5KFAJNWYKWLIFBN0OGVQQW2XF',
@@ -31,7 +32,7 @@ const App = () => {
         name: 'SuperMall',
         currency: 'NGN',
         mobileNumber: '09077777777',
-        transactionRef: 'boiuafsd8o3bcqgef',
+        transactionRef: transRef,
         onSuccess: payload => console.log(payload),
         onFailure: payload => console.log(payload),
         onPending: payload => console.log(payload)
