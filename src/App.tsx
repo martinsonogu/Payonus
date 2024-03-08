@@ -26,7 +26,7 @@ const App = () => {
   const transRef = uuidv4();
       const configOptions: ConfigOptionsTypes = {
         environment: 'sandbox',
-        secretKey: 'sk_test_DXF5KFAJNWYKWLIFBN0OGVQQW2XF',
+        secretKey: 'sk_test_RUHBQBSRSRTKABNQVY0DFC2QDJLX',
         amount: 2500,
         email: 'martins@payonus.com',
         name: 'SuperMall',
