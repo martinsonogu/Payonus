@@ -27,7 +27,7 @@ const App = () => {
       const configOptions: ConfigOptionsTypes = {
         environment: 'sandbox',
         secretKey: 'sk_test_RUHBQBSRSRTKABNQVY0DFC2QDJLX',
-        amount: 2500,
+        amount: 2900,
         email: 'martins@payonus.com',
         name: 'SuperMall',
         currency: 'NGN',
