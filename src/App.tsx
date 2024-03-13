@@ -25,9 +25,9 @@ interface ConfigOptionsTypes {
 const App = () => {
   const transRef = uuidv4();
       const configOptions: ConfigOptionsTypes = {
-        environment: 'sandbox',
-        secretKey: 'sk_test_RUHBQBSRSRTKABNQVY0DFC2QDJLX',
-        amount: 2900,
+        environment: 'live',
+        secretKey: 'PNUSJ9JNPE7IC',
+        amount: 3500,
         email: 'martins@payonus.com',
         name: 'SuperMall',
         currency: 'NGN',
